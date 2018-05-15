@@ -1,0 +1,17 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<title>{{ _("Change password") }}</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+{% block extra_head %}{% endblock %}
+<div class=page>
+  <h1>
+   {% if logo %}
+   <a href="{{ url_for('index') }}"><img src="{{ url_for('logo') }}"></a>
+   {% endif %}
+   {{ _("Change password") }}
+  </h1>
+ {% for category, message in get_flashed_messages(with_categories=true) %}
+  <div class="flash {{ category }}">{{ message }}</div>
+ {% endfor %}
+ {% block body %}{% endblock %}
+</div>

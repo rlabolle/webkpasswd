@@ -1,0 +1,21 @@
+{% macro render_field(field, label=True, tooltip=None) %}
+  <li>
+{% if label %}
+  {{ field.label }} :
+  <span>{{ field(**kwargs)|safe }}</span>
+{% else %}
+  {{ field(**kwargs)|safe }}
+{% endif %}
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li class=error>{{ _(error) }}
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% if tooltip is not none %}
+  <div class=tooltip id="{{ field.id }}_tooltip">
+    {{ tooltip|safe }}
+  </div>
+{% endif %}
+{% endmacro %}

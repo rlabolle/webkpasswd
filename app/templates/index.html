@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block extra_head %}
+  <script type=text/javascript src="{{ url_for('static', filename='jquery-3.1.1.slim.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='zxcvbn-4.4.1.min.js') }}"></script>
+  <script type=text/javascript src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+{% from "_formhelpers.html" import render_field %}
+<form method=post autocomplete=off>
+  <ul>
+    {{ render_field(form.username, tooltip=_('Generaly of the form <strong>firstname.lastname</strong>')) }}
+    {{ render_field(form.oldpassword, tooltip=_('If you forgot your password, please contact <strong>%(contact_email)s</strong>',contact_email=contact_email)) }}
+    {% set tooltip %}
+      <h4>{{ _("Password must:") }}</h4>
+      <ul>
+        <li id=length  class=invalid>{{ _("Be at least <strong>9 characters</strong>") }}
+      </ul>
+      <p>{{ _("And meet 3 of the following requirements:") }}</p>
+      <ul>
+        <li id=letter  class=invalid>{{ _("At least <strong>one small letter</strong>") }}
+        <li id=capital class=invalid>{{ _("At least <strong>one capital letter</strong>") }}
+        <li id=number  class=invalid>{{ _("At least <strong>one number</strong>") }}
+        <li id=symbol  class=invalid>{{ _("At least <strong>one symbol</strong>") }}
+      </ul>
+      <meter max="4" id="password-strength-meter"></meter>
+    {% endset %}
+    {{ render_field(form.newpassword, tooltip=tooltip) }}
+    {% set tooltip %}
+    <ul>
+      <li id=match class=invalid>{{ _("Must match <strong>%(newpassword)s</strong>", newpassword=form.newpassword.label.text) }}
+    </ul>
+    {% endset %}
+    {{ render_field(form.conpassword, tooltip=tooltip) }}
+    {{ render_field(form.recaptcha,label=False) }}
+    {{ render_field(form.csrf_token,label=False) }}
+    {{ render_field(form.submit,label=False) }}
+  </ul>
+</form>
+{% endblock %}

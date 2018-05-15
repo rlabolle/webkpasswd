@@ -1,0 +1,117 @@
+# French translations for PROJECT.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-12-08 16:23+0100\n"
+"PO-Revision-Date: 2016-12-07 16:21+0100\n"
+"Last-Translator: Romain Labolle <romain.labolle@universite-lyon.fr>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: app.py:24
+msgid "your administrator"
+msgstr "votre administrateur"
+
+#: app.py:41
+msgid "Username"
+msgstr "Nom d´utilisateur"
+
+#: app.py:42
+msgid "Old password"
+msgstr "Ancien mot de passe"
+
+#: app.py:43
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#: app.py:44
+msgid "Confirm new password"
+msgstr "Confirmez le mot de pase"
+
+#: app.py:44
+msgid "Passwords must match"
+msgstr "Les mots de passe doivent correspondre"
+
+#: app.py:46 templates/layout.html:2 templates/layout.html:10
+msgid "Change password"
+msgstr "Changer de mot de passe"
+
+#: app.py:59
+msgid "Password successfully changed"
+msgstr "Mot de passe changé avec succès"
+
+#: errors.py:8
+#, python-format
+msgid "Unknown error code %(code)d"
+msgstr "Erreur inconue n°%(code)d"
+
+#: errors.py:11
+msgid "Your account is locked out"
+msgstr "Votre compte est vérouillé"
+
+#: errors.py:12
+msgid "Old password incorrect"
+msgstr "Ancien mot de passe incorrect"
+
+#: errors.py:13
+msgid "The new password was rejected by the server"
+msgstr "Le nouveau mot de passe a été rejeté par le serveur"
+
+#: templates/index.html:7
+msgid "Generaly of the form <strong>firstname.lastname</strong>"
+msgstr "Généralement de la forme <strong>prenom.nom</strong>"
+
+#: templates/index.html:8
+#, python-format
+msgid ""
+"If you forgot your password, please contact "
+"<strong>%(contact_email)s</strong>"
+msgstr ""
+"Si vous avez oublié votre mot de passe, Contactez "
+"<strong>%(contact_email)s</strong>"
+
+#: templates/index.html:10
+msgid "Password must:"
+msgstr "Le mot de passe doit contenir :"
+
+#: templates/index.html:12
+msgid "Be at least <strong>9 characters</strong>"
+msgstr "Au moins <strong>9 characters</strong>"
+
+#: templates/index.html:14
+msgid "And meet 3 of the following requirements:"
+msgstr "et respecter au moins 3 des critères suivants :"
+
+#: templates/index.html:16
+msgid "At least <strong>one small letter</strong>"
+msgstr "Au moins <strong>une minuscule</strong>"
+
+#: templates/index.html:17
+msgid "At least <strong>one capital letter</strong>"
+msgstr "Au moins <strong>une majuscule</strong>"
+
+#: templates/index.html:18
+msgid "At least <strong>one number</strong>"
+msgstr "Au moins <strong>un chiffre</strong>"
+
+#: templates/index.html:19
+msgid "At least <strong>one symbol</strong>"
+msgstr "Au moins <strong>un symbol</strong>"
+
+#: templates/index.html:26
+#, python-format
+msgid "Must match <strong>%(newpassword)s</strong>"
+msgstr "Doit correspondre au champ <strong>%(newpassword)s</strong>"
+
+msgid "The response parameter is missing."
+msgstr "Paramètre manquant."
