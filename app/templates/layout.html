@@ -5,9 +5,7 @@
 {% block extra_head %}{% endblock %}
 <div class=page>
   <h1>
-   {% if logo %}
    <a href="{{ url_for('index') }}"><img src="{{ url_for('logo') }}"></a>
-   {% endif %}
    {{ _("Change password") }}
   </h1>
  {% for category, message in get_flashed_messages(with_categories=true) %}

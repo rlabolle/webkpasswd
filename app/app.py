@@ -12,6 +12,7 @@ from config import EnvConfig
 
 app = Flask(__name__)
 app.config.from_object(EnvConfig)
+app.config.from_envvar('FLASK_CONFIG')
 app.logger.handlers.extend(logging.getLogger("gunicorn.error").handlers)
 app.logger.setLevel(logging.INFO)
 
@@ -38,7 +39,7 @@ def index():
         else:
             flash(_("Password successfully changed"),'success')
             return render_template("success.html")
-    return render_template("index.html", form=form, contact_email=app.config.get('CONTACT_EMAIL'), logo=app.config.get('SHOW_LOGO'))
+    return render_template("index.html", form=form, contact_email=app.config.get('CONTACT_EMAIL'))
 
 @app.route("/logo.png")
 def logo():
