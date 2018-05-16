@@ -2,7 +2,7 @@ FROM alpine:3.7
 MAINTAINER Romain Labolle <romain.labolle@universite-lyon.fr> 
 
 RUN apk upgrade --no-cache && \
-    apk add --no-cache krb5-libs python3 ca-certificates && \
+    apk add --no-cache krb5-libs python3 ca-certificates curl && \
     pip3 install --upgrade pip && \
     addgroup -S gunicorn && \
     adduser -S -h /var/lib/gunicorn -G gunicorn -g "Gunicorn" -s /bin/ash -D gunicorn
