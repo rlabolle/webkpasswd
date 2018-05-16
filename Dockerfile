@@ -19,5 +19,5 @@ RUN chown -R gunicorn:gunicorn /var/lib/gunicorn
 USER gunicorn
 WORKDIR /var/lib/gunicorn
 EXPOSE 8000/tcp
-HEALTHCHECK --interval=5s --timeout=3s CMD curl --fail http://localhost:8000/healthz || exit 1
+HEALTHCHECK --interval=5s --timeout=3s CMD curl --silent --show-error --fail http://localhost:8000/healthz || exit 1
 CMD ["/usr/bin/gunicorn", "-b", "0.0.0.0:8000", "app:app"]
