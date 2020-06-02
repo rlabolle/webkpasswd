@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-06-03 00:19+0200\n"
+"POT-Creation-Date: 2020-06-03 00:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,16 +19,10 @@ msgstr ""
 
 #: app.py:44
 #, python-format
-msgid "This password has been seen %(value)d times before"
+msgid "This password has been seen %(value)d times before in data breaches"
 msgstr ""
 
-#: app.py:45
-msgid ""
-"This password has previously appeared in a data breach and should never "
-"be used"
-msgstr ""
-
-#: app.py:49
+#: app.py:48
 msgid "Password successfully changed"
 msgstr ""
 

@@ -41,8 +41,7 @@ def index():
                 try:
                     seen = pwnedpasswords.check(form.newpassword.data, plain_text=True)
                     if seen > 0:
-                        flash(_("This password has been seen %(value)d times before", value=seen), 'error')
-                        flash(_("This password has previously appeared in a data breach and should never be used"), 'warning')
+                        flash(_("This password has been seen %(value)d times before in data breaches", value=seen), 'error')
                 except:
                     pass
         else:

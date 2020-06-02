@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-06-03 00:19+0200\n"
+"POT-Creation-Date: 2020-06-03 00:46+0200\n"
 "PO-Revision-Date: 2016-12-07 16:21+0100\n"
 "Last-Translator: Romain Labolle <romain.labolle@universite-lyon.fr>\n"
 "Language: fr\n"
@@ -20,18 +20,10 @@ msgstr ""
 
 #: app.py:44
 #, python-format
-msgid "This password has been seen %(value)d times before"
-msgstr "Ce mot de passe a été vu %(value)d fois"
+msgid "This password has been seen %(value)d times before in data breaches"
+msgstr "Ce mot de passe a été vu %(value)d fois dans des fuites de données"
 
-#: app.py:45
-msgid ""
-"This password has previously appeared in a data breach and should never "
-"be used"
-msgstr ""
-"Ce mot de passe est déjà apparu dans des fuites de données et ne doit "
-"plus jamais être utilisé"
-
-#: app.py:49
+#: app.py:48
 msgid "Password successfully changed"
 msgstr "Mot de passe changé avec succès"
 
@@ -128,4 +120,16 @@ msgstr "Doit correspondre au champ <strong>%(newpassword)s</strong>"
 
 #~ msgid "The response parameter is missing."
 #~ msgstr "Paramètre manquant."
+
+#~ msgid "This password has been seen %(value)d times before"
+#~ msgstr "Ce mot de passe a été vu %(value)d fois"
+
+#~ msgid ""
+#~ "This password has previously appeared in"
+#~ " a data breach and should never "
+#~ "be used"
+#~ msgstr ""
+#~ "Ce mot de passe est déjà apparu"
+#~ " dans des fuites de données et "
+#~ "ne doit plus jamais être utilisé"
 
