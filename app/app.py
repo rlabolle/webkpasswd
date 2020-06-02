@@ -9,6 +9,7 @@ from kerberos import changePassword, PwdChangeError
 from errors import changePasswordErrorMsg
 from forms import ChangePasswordForm
 from config import EnvConfig
+import pwnedpasswords
 
 app = Flask(__name__)
 app.config.from_object(EnvConfig)
@@ -36,6 +37,14 @@ def index():
             while isinstance(e.args,tuple) and len(e.args) == 1:
                 e.args = e.args[0]
             flash(changePasswordErrorMsg[e.args[1]], 'error')
+            if e.args[1] == 4:
+                try:
+                    seen = pwnedpasswords.check(form.newpassword.data, plain_text=True)
+                    if seen > 0:
+                        flash(_("This password has been seen %(value)d times before", value=seen), 'error')
+                        flash(_("This password has previously appeared in a data breach and should never be used"), 'warning')
+                except:
+                    pass
         else:
             flash(_("Password successfully changed"),'success')
             return render_template("success.html")

@@ -1,52 +1,39 @@
 # Translations template for PROJECT.
-# Copyright (C) 2016 ORGANIZATION
+# Copyright (C) 2020 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-12-08 16:23+0100\n"
+"POT-Creation-Date: 2020-06-03 00:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
-
-#: app.py:24
-msgid "your administrator"
-msgstr ""
-
-#: app.py:41
-msgid "Username"
-msgstr ""
-
-#: app.py:42
-msgid "Old password"
-msgstr ""
-
-#: app.py:43
-msgid "New password"
-msgstr ""
+"Generated-By: Babel 2.8.0\n"
 
 #: app.py:44
-msgid "Confirm new password"
+#, python-format
+msgid "This password has been seen %(value)d times before"
 msgstr ""
 
-#: app.py:44
-msgid "Passwords must match"
+#: app.py:45
+msgid ""
+"This password has previously appeared in a data breach and should never "
+"be used"
 msgstr ""
 
-#: app.py:46 templates/layout.html:2 templates/layout.html:10
-msgid "Change password"
-msgstr ""
-
-#: app.py:59
+#: app.py:49
 msgid "Password successfully changed"
+msgstr ""
+
+#: config.py:11
+msgid "your administrator"
 msgstr ""
 
 #: errors.py:8
@@ -66,46 +53,70 @@ msgstr ""
 msgid "The new password was rejected by the server"
 msgstr ""
 
-#: templates/index.html:7
+#: forms.py:7
+msgid "Username"
+msgstr ""
+
+#: forms.py:8
+msgid "Old password"
+msgstr ""
+
+#: forms.py:9
+msgid "New password"
+msgstr ""
+
+#: forms.py:10
+msgid "Confirm new password"
+msgstr ""
+
+#: forms.py:10
+msgid "Passwords must match"
+msgstr ""
+
+#: forms.py:12 templates/layout.html:3 templates/layout.html:9
+msgid "Change password"
+msgstr ""
+
+#: templates/index.html:13
 msgid "Generaly of the form <strong>firstname.lastname</strong>"
 msgstr ""
 
-#: templates/index.html:8
+#: templates/index.html:14
 #, python-format
 msgid ""
 "If you forgot your password, please contact "
 "<strong>%(contact_email)s</strong>"
 msgstr ""
 
-#: templates/index.html:10
+#: templates/index.html:16
 msgid "Password must:"
 msgstr ""
 
-#: templates/index.html:12
+#: templates/index.html:18
 msgid "Be at least <strong>9 characters</strong>"
 msgstr ""
 
-#: templates/index.html:14
+#: templates/index.html:20
 msgid "And meet 3 of the following requirements:"
 msgstr ""
 
-#: templates/index.html:16
+#: templates/index.html:22
 msgid "At least <strong>one small letter</strong>"
 msgstr ""
 
-#: templates/index.html:17
+#: templates/index.html:23
 msgid "At least <strong>one capital letter</strong>"
 msgstr ""
 
-#: templates/index.html:18
+#: templates/index.html:24
 msgid "At least <strong>one number</strong>"
 msgstr ""
 
-#: templates/index.html:19
+#: templates/index.html:25
 msgid "At least <strong>one symbol</strong>"
 msgstr ""
 
-#: templates/index.html:26
+#: templates/index.html:32
 #, python-format
 msgid "Must match <strong>%(newpassword)s</strong>"
 msgstr ""
