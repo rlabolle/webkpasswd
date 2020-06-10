@@ -62,7 +62,7 @@ msgstr "Nouveau mot de passe"
 
 #: forms.py:10
 msgid "Confirm new password"
-msgstr "Confirmez le mot de pase"
+msgstr "Confirmez le mot de passe"
 
 #: forms.py:10
 msgid "Passwords must match"
