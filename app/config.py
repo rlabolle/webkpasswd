@@ -11,5 +11,4 @@ class EnvConfig(object):
     CONTACT_EMAIL         = os.getenv('FLASK_CONTACT_EMAIL', _("your administrator"))
     LOGO                  = os.getenv('FLASK_LOGO', NO_LOGO)
     CHPASSWD              = os.getenv('FLASK_CHPASSWD', 'kpasswd')
-
-
+    SMB_SERVER            = os.getenv('FLASK_SMB_SERVER', '')

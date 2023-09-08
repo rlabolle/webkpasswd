@@ -16,6 +16,8 @@ app.config.from_envvar('FLASK_CONFIG')
 match app.config.get('CHPASSWD'):
     case 'kpasswd':
         from kpasswd import chgpasswd
+    case 'smbpasswd':
+        from smbpasswd import chgpasswd
 
 def get_locale():
     supported = ['fr', 'en']
@@ -35,7 +37,7 @@ def index():
             chgpasswd(form.username.data,form.oldpassword.data,form.newpassword.data)
         except ChangePasswordError as e:
             errmsg = e.message
-            app.logger.info(f'[UserError] {form.username.data}: {errmsg}')
+            app.logger.info(f'[UserError] {form.username.data}: {errmsg} ({e.internalerror})')
             flash(errmsg,'error')
         else:
             flash(_("Password successfully changed"),'success')
@@ -53,6 +55,8 @@ def healthz():
     return "ok"
 
 if __name__ == "__main__":
+    app.testing = True
+    app.logger.setLevel(logging.DEBUG)
     app.run()
 else:
     gunicorn_logger = logging.getLogger('gunicorn.error')
