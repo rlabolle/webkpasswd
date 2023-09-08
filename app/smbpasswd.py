@@ -6,7 +6,7 @@ from pprint import pprint
 import pwnedpasswords
 
 changePasswordErrorMsg = ErrorMsg({
-   0xc000006A: _("Old password incorrect"),
+   0xc000006A: _("Old password incorrect or wrong username"),
    0xc000006B: _("The new password was rejected by the server"),
    0xC000006C: _("The new password was rejected by the server"),
 })

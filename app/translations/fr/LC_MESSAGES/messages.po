@@ -7,23 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-06-03 00:46+0200\n"
+"POT-Creation-Date: 2023-09-08 12:23+0200\n"
 "PO-Revision-Date: 2016-12-07 16:21+0100\n"
 "Last-Translator: Romain Labolle <romain.labolle@universite-lyon.fr>\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.12.1\n"
 
-#: app.py:44
-#, python-format
-msgid "This password has been seen %(value)d times before in data breaches"
-msgstr "Ce mot de passe a été vu %(value)d fois dans des fuites de données"
-
-#: app.py:48
+#: app.py:43
 msgid "Password successfully changed"
 msgstr "Mot de passe changé avec succès"
 
@@ -35,18 +30,6 @@ msgstr "votre administrateur"
 #, python-format
 msgid "Unknown error code %(code)d"
 msgstr "Erreur inconue n°%(code)d"
-
-#: errors.py:11
-msgid "Your account is locked out"
-msgstr "Votre compte est vérouillé"
-
-#: errors.py:12
-msgid "Old password incorrect"
-msgstr "Ancien mot de passe incorrect"
-
-#: errors.py:13
-msgid "The new password was rejected by the server"
-msgstr "Le nouveau mot de passe a été rejeté par le serveur"
 
 #: forms.py:7
 msgid "Username"
@@ -71,6 +54,27 @@ msgstr "Les mots de passe doivent correspondre"
 #: forms.py:12 templates/layout.html:3 templates/layout.html:9
 msgid "Change password"
 msgstr "Changer de mot de passe"
+
+#: kpasswd.py:7
+msgid "Your account is locked out"
+msgstr "Votre compte est vérouillé"
+
+#: kpasswd.py:8
+msgid "Old password incorrect"
+msgstr "Ancien mot de passe incorrect"
+
+#: kpasswd.py:9 smbpasswd.py:10 smbpasswd.py:11
+msgid "The new password was rejected by the server"
+msgstr "Le nouveau mot de passe a été rejeté par le serveur"
+
+#: kpasswd.py:23 smbpasswd.py:29
+#, python-format
+msgid "This password has been seen %(value)d times before in data breaches"
+msgstr "Ce mot de passe a été vu %(value)d fois dans des fuites de données"
+
+#: smbpasswd.py:9
+msgid "Old password incorrect or wrong username"
+msgstr "Ancien mot de passe ou nom d'utilisateur incorrect"
 
 #: templates/index.html:13
 msgid "Generaly of the form <strong>firstname.lastname</strong>"
