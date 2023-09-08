@@ -14,17 +14,16 @@ import pwnedpasswords
 app = Flask(__name__)
 app.config.from_object(EnvConfig)
 app.config.from_envvar('FLASK_CONFIG')
-app.logger.handlers.extend(logging.getLogger("gunicorn.error").handlers)
-app.logger.setLevel(logging.INFO)
 
-babel = Babel(app)
-@babel.localeselector
 def get_locale():
     supported = ['fr', 'en']
     default = 'fr'
     if 'lang' in request.args and request.args['lang'] in supported:
         return request.args['lang']
     return request.accept_languages.best_match(supported, default)
+
+babel = Babel(app)
+babel.init_app(app, locale_selector=get_locale)
 
 
 @app.route("/", methods=["GET","POST"])
@@ -36,11 +35,14 @@ def index():
         except PwdChangeError as e:
             while isinstance(e.args,tuple) and len(e.args) == 1:
                 e.args = e.args[0]
-            flash(changePasswordErrorMsg[e.args[1]], 'error')
+            errmsg = changePasswordErrorMsg[e.args[1]]
+            app.logger.info(f'[UserError] {form.username.data}: {errmsg}')
+            flash(errmsg, 'error')
             if e.args[1] == 4:
                 try:
                     seen = pwnedpasswords.check(form.newpassword.data, plain_text=True)
                     if seen > 0:
+                        app.logger.info(f'[UserError] {form.username.data}: breached password')
                         flash(_("This password has been seen %(value)d times before in data breaches", value=seen), 'error')
                 except:
                     pass
@@ -61,4 +63,8 @@ def healthz():
 
 if __name__ == "__main__":
     app.run()
+else:
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
 
