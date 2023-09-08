@@ -10,5 +10,6 @@ class EnvConfig(object):
     RECAPTCHA_PRIVATE_KEY = os.getenv('FLASK_RECAPTCHA_PRIVATE_KEY')
     CONTACT_EMAIL         = os.getenv('FLASK_CONTACT_EMAIL', _("your administrator"))
     LOGO                  = os.getenv('FLASK_LOGO', NO_LOGO)
+    CHPASSWD              = os.getenv('FLASK_CHPASSWD', 'kpasswd')
 
 

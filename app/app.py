@@ -5,15 +5,17 @@ from base64 import b64decode
 from flask import Flask, render_template, flash, request, make_response
 from flask_babel import Babel
 from flask_babel import lazy_gettext as _
-from kerberos import changePassword, PwdChangeError
-from errors import changePasswordErrorMsg
+from errors import ChangePasswordError
 from forms import ChangePasswordForm
 from config import EnvConfig
-import pwnedpasswords
 
 app = Flask(__name__)
 app.config.from_object(EnvConfig)
 app.config.from_envvar('FLASK_CONFIG')
+
+match app.config.get('CHPASSWD'):
+    case 'kpasswd':
+        from kpasswd import chgpasswd
 
 def get_locale():
     supported = ['fr', 'en']
@@ -25,27 +27,16 @@ def get_locale():
 babel = Babel(app)
 babel.init_app(app, locale_selector=get_locale)
 
-
 @app.route("/", methods=["GET","POST"])
 def index():
     form = ChangePasswordForm()
     if form.validate_on_submit():
         try:
-            changePassword(form.username.data,form.oldpassword.data,form.newpassword.data)
-        except PwdChangeError as e:
-            while isinstance(e.args,tuple) and len(e.args) == 1:
-                e.args = e.args[0]
-            errmsg = changePasswordErrorMsg[e.args[1]]
+            chgpasswd(form.username.data,form.oldpassword.data,form.newpassword.data)
+        except ChangePasswordError as e:
+            errmsg = e.message
             app.logger.info(f'[UserError] {form.username.data}: {errmsg}')
-            flash(errmsg, 'error')
-            if e.args[1] == 4:
-                try:
-                    seen = pwnedpasswords.check(form.newpassword.data, plain_text=True)
-                    if seen > 0:
-                        app.logger.info(f'[UserError] {form.username.data}: breached password')
-                        flash(_("This password has been seen %(value)d times before in data breaches", value=seen), 'error')
-                except:
-                    pass
+            flash(errmsg,'error')
         else:
             flash(_("Password successfully changed"),'success')
             return render_template("success.html")
