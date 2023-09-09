@@ -80,7 +80,8 @@ label {
     margin-top:5px;
 }
 
-.g-recaptcha > div {
+.g-recaptcha > *, .h-captcha > * {
+    display: block;
     margin: auto;
 }
 
@@ -121,9 +122,9 @@ input[type="submit"]:active, button:active {
 .tooltip {
     display:none;
     position: absolute;
-    top: 90px;
+    bottom: 80px;
     left: 0px;
-    width: 328px;
+    right: 0px;
     padding: 15px;
     background: #fefefe;
     font-size: .875em;
@@ -139,14 +140,14 @@ input[type="submit"]:active, button:active {
     font-weight:normal;
 }
 
-.tooltip::before {
-    content: "\25B2";
+.tooltip::after {
+    content: "\25BC";
     position:absolute;
-    top:-13px;
+    bottom:-30px;
     left:45%;
-    font-size:14px;
-    line-height:14px;
-    color:#ddd;
+    font-size:40px;
+    line-height:40px;
+    color: rgba(221, 221, 221, 0.8);
     text-shadow:none;
     display:block;
 }

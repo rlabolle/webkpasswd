@@ -20,9 +20,6 @@ $(document).ready(function() {
         var tooltip = $('div#'+$(this).attr('id')+'_tooltip.tooltip')
         tooltip.hide();
     });
-    $('.tooltip').hover(function() {
-        $(this).hide();
-    });
 
     var updatematch = function() {
         var newpass = $("input#newpassword").val();
