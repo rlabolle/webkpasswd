@@ -13,11 +13,10 @@ app = Flask(__name__)
 app.config.from_object(EnvConfig)
 app.config.from_envvar('FLASK_CONFIG')
 
-match app.config.get('CHPASSWD'):
-    case 'kpasswd':
-        from kpasswd import chgpasswd
-    case 'smbpasswd':
-        from smbpasswd import chgpasswd
+if app.config.get('CHPASSWD') == 'smbpasswd':
+    from smbpasswd import chgpasswd
+else:
+    from kpasswd import chgpasswd
 
 def get_locale():
     supported = ['fr', 'en']
