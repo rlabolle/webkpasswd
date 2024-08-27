@@ -5,18 +5,19 @@ from base64 import b64decode
 from flask import Flask, render_template, flash, request, make_response
 from flask_babel import Babel
 from flask_babel import lazy_gettext as _
-from errors import ChangePasswordError
-from forms import ChangePasswordForm
-from config import EnvConfig
+
+from .errors import ChangePasswordError
+from .forms import ChangePasswordForm
+from .config import EnvConfig
 
 app = Flask(__name__)
 app.config.from_object(EnvConfig)
-app.config.from_envvar('FLASK_CONFIG')
+app.config.from_envvar('FLASK_CONFIG', silent=True)
 
 if app.config.get('CHPASSWD') == 'smbpasswd':
-    from smbpasswd import chgpasswd
+    from .smbpasswd import chgpasswd
 else:
-    from kpasswd import chgpasswd
+    from .kpasswd import chgpasswd
 
 def get_locale():
     supported = ['fr', 'en']

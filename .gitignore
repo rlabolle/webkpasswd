@@ -1,4 +1,7 @@
 __pycache__/
 *.py[cod]
 venv/
+build/
 flask.cfg
+*.egg-info/
+*.egg

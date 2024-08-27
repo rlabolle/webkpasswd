@@ -1,0 +1,9 @@
+[Unit]
+Description=gunicorn webkpasswd socket
+
+[Socket]
+ListenStream=/run/webkpasswd/socket
+User=nginx
+
+[Install]
+WantedBy=sockets.target

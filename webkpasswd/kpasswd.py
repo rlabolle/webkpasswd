@@ -1,7 +1,8 @@
 from flask_babel import lazy_gettext as _
-from errors import ErrorMsg, ChangePasswordError
 from kerberos import changePassword, PwdChangeError
 import pwnedpasswords
+
+from .errors import ErrorMsg, ChangePasswordError
 
 changePasswordErrorMsg = ErrorMsg({
   -1765328366: _("Your account is locked out"),

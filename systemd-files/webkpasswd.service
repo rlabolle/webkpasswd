@@ -1,0 +1,34 @@
+[Unit]
+Description=Gunicorn webkpasswd service
+Requires=webkpasswd.socket
+After=network.target
+
+[Service]
+Type=notify
+User=webkpasswd
+Group=webkpasswd
+RuntimeDirectory=webkpasswd
+WorkingDirectory=/var/lib/webkpasswd/
+Environment=WEB_CONCURRENCY=4
+Environment=FLASK_CONFIG=/var/lib/webkpasswd/flask.cfg
+ExecStart=/var/lib/webkpasswd/venv/bin/gunicorn webkpasswd:app
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+DevicePolicy=closed
+ProtectSystem=strict
+ProtectHome=true
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+RestrictRealtime=yes
+RestrictNamespaces=yes
+MemoryDenyWriteExecute=yes
+
+[Install]
+WantedBy=multi-user.target

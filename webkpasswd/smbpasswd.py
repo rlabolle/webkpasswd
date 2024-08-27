@@ -1,9 +1,10 @@
 from flask import current_app
 from flask_babel import lazy_gettext as _
-from errors import ErrorMsg, ChangePasswordError
 from impacket.dcerpc.v5 import transport, samr
 from pprint import pprint
 import pwnedpasswords
+
+from .errors import ErrorMsg, ChangePasswordError
 
 changePasswordErrorMsg = ErrorMsg({
    0xc000006A: _("Old password incorrect or wrong username"),

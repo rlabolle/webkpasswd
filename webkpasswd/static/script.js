@@ -58,7 +58,7 @@ $(document).ready(function() {
             $('#newpassword_tooltip #number').removeClass('valid').addClass('invalid');
         }
         //validate symbols
-        if ( pswd.match(/[^A-z0-9]/) ) {
+        if ( pswd.match(/[^A-Za-z0-9]/) ) {
             $('#newpassword_tooltip #symbol').removeClass('invalid').addClass('valid');
         } else {
             $('#newpassword_tooltip #symbol').removeClass('valid').addClass('invalid');

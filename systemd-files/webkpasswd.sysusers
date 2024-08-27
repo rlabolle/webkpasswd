@@ -1,0 +1,2 @@
+#Type Name       ID GECOS                 Home directory Shell
+u     webkpasswd -  "WebKPasswd User"     /var/lib/webkpasswd
