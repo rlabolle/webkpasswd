@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-09-08 12:23+0200\n"
+"POT-Creation-Date: 2024-08-28 16:50+0200\n"
 "PO-Revision-Date: 2016-12-07 16:21+0100\n"
 "Last-Translator: Romain Labolle <romain.labolle@universite-lyon.fr>\n"
 "Language: fr\n"
@@ -16,9 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: app.py:43
+#: __init__.py:43
 msgid "Password successfully changed"
 msgstr "Mot de passe changé avec succès"
 
@@ -55,24 +55,32 @@ msgstr "Les mots de passe doivent correspondre"
 msgid "Change password"
 msgstr "Changer de mot de passe"
 
-#: kpasswd.py:7
+#: kpasswd.py:8
 msgid "Your account is locked out"
 msgstr "Votre compte est vérouillé"
 
-#: kpasswd.py:8
+#: kpasswd.py:9
 msgid "Old password incorrect"
 msgstr "Ancien mot de passe incorrect"
 
-#: kpasswd.py:9 smbpasswd.py:10 smbpasswd.py:11
+#: kpasswd.py:10
+msgid "Unknown username"
+msgstr "Nom d´utilisateur inconnu"
+
+#: kpasswd.py:11
+msgid "Service unavailable"
+msgstr "Service indisponible"
+
+#: kpasswd.py:12 smbpasswd.py:11 smbpasswd.py:12
 msgid "The new password was rejected by the server"
 msgstr "Le nouveau mot de passe a été rejeté par le serveur"
 
-#: kpasswd.py:23 smbpasswd.py:29
+#: kpasswd.py:26 smbpasswd.py:30
 #, python-format
 msgid "This password has been seen %(value)d times before in data breaches"
 msgstr "Ce mot de passe a été vu %(value)d fois dans des fuites de données"
 
-#: smbpasswd.py:9
+#: smbpasswd.py:10
 msgid "Old password incorrect or wrong username"
 msgstr "Ancien mot de passe ou nom d'utilisateur incorrect"
 
@@ -121,19 +129,3 @@ msgstr "Au moins <strong>un symbol</strong>"
 #, python-format
 msgid "Must match <strong>%(newpassword)s</strong>"
 msgstr "Doit correspondre au champ <strong>%(newpassword)s</strong>"
-
-#~ msgid "The response parameter is missing."
-#~ msgstr "Paramètre manquant."
-
-#~ msgid "This password has been seen %(value)d times before"
-#~ msgstr "Ce mot de passe a été vu %(value)d fois"
-
-#~ msgid ""
-#~ "This password has previously appeared in"
-#~ " a data breach and should never "
-#~ "be used"
-#~ msgstr ""
-#~ "Ce mot de passe est déjà apparu"
-#~ " dans des fuites de données et "
-#~ "ne doit plus jamais être utilisé"
-
