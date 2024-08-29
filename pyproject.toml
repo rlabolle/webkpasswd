@@ -1,7 +1,7 @@
 [project]
 name = "webkpasswd"
 description = "Web interface to change ActiveDirectory password with kpasswd or smbpasswd protocols"
-version = "0.4.1"
+version = "0.4.2"
 authors = [
     { name = "Romain Labolle", email = "romain.labolle@universite-lyon.fr" }
 ]

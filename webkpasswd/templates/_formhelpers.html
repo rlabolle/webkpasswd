@@ -1,7 +1,7 @@
 {% macro render_field(field, label=True, tooltip=None) %}
   <li>
 {% if label %}
-  {{ field.label }} :
+  {{ field.label }}:
   <span>{{ field(**kwargs)|safe }}</span>
 {% else %}
   {{ field(**kwargs)|safe }}

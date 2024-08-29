@@ -33,19 +33,19 @@ msgstr "Erreur inconue n°%(code)d"
 
 #: forms.py:7
 msgid "Username"
-msgstr "Nom d´utilisateur"
+msgstr "Nom d´utilisateur "
 
 #: forms.py:8
 msgid "Old password"
-msgstr "Ancien mot de passe"
+msgstr "Ancien mot de passe "
 
 #: forms.py:9
 msgid "New password"
-msgstr "Nouveau mot de passe"
+msgstr "Nouveau mot de passe "
 
 #: forms.py:10
 msgid "Confirm new password"
-msgstr "Confirmez le mot de passe"
+msgstr "Confirmez le mot de passe "
 
 #: forms.py:10
 msgid "Passwords must match"
