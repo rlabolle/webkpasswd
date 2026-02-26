@@ -1,7 +1,10 @@
 [project]
 name = "webkpasswd"
 description = "Web interface to change ActiveDirectory password with kpasswd or smbpasswd protocols"
-version = "0.4.3"
+version = "0.5.0"
+license = "MIT OR Apache-2.0"
+license-files = ["LICENSE*"]
+readme = "README.md"
 authors = [
     { name = "Romain Labolle", email = "romain.labolle@universite-lyon.fr" }
 ]
@@ -13,6 +16,15 @@ dependencies = [
     "pwnedpasswords>=2.0.0"
 ]
 requires-python = ">=3.5"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository = "https://github.com/rlabolle/webkpasswd.git"
+Issues = "https://github.com/rlabolle/webkpasswd/issues"
 
 [project.optional-dependencies]
 smb = ["impacket>=0.11.0"]
