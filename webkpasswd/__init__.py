@@ -7,7 +7,6 @@ from flask_babel import Babel
 from flask_babel import lazy_gettext as _
 
 from .errors import ChangePasswordError
-from .forms import ChangePasswordForm
 from .config import EnvConfig
 
 app = Flask(__name__)
@@ -31,6 +30,7 @@ babel.init_app(app, locale_selector=get_locale)
 
 @app.route("/", methods=["GET","POST"])
 def index():
+    from .forms import ChangePasswordForm
     form = ChangePasswordForm()
     if form.validate_on_submit():
         try:

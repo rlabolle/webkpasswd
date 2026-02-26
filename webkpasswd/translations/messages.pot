@@ -1,21 +1,21 @@
 # Translations template for PROJECT.
-# Copyright (C) 2024 ORGANIZATION
+# Copyright (C) 2026 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-28 16:50+0200\n"
+"POT-Creation-Date: 2026-02-26 17:25+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: __init__.py:43
 msgid "Password successfully changed"
@@ -30,27 +30,27 @@ msgstr ""
 msgid "Unknown error code %(code)d"
 msgstr ""
 
-#: forms.py:7
+#: forms.py:8
 msgid "Username"
 msgstr ""
 
-#: forms.py:8
+#: forms.py:9
 msgid "Old password"
 msgstr ""
 
-#: forms.py:9
+#: forms.py:10
 msgid "New password"
 msgstr ""
 
-#: forms.py:10
+#: forms.py:11
 msgid "Confirm new password"
 msgstr ""
 
-#: forms.py:10
+#: forms.py:11
 msgid "Passwords must match"
 msgstr ""
 
-#: forms.py:12 templates/layout.html:3 templates/layout.html:9
+#: forms.py:13 templates/layout.html:3 templates/layout.html:9
 msgid "Change password"
 msgstr ""
 
@@ -99,7 +99,8 @@ msgid "Password must:"
 msgstr ""
 
 #: templates/index.html:18
-msgid "Be at least <strong>9 characters</strong>"
+#, python-format
+msgid "Be at least <strong>%(minpwdlen)d characters</strong>"
 msgstr ""
 
 #: templates/index.html:20

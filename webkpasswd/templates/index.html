@@ -15,7 +15,7 @@
     {% set tooltip %}
       <h4>{{ _("Password must:") }}</h4>
       <ul>
-        <li id=length  class=invalid>{{ _("Be at least <strong>9 characters</strong>") }}
+        <li id=length  class=invalid>{{ _("Be at least <strong>%(minpwdlen)d characters</strong>", minpwdlen=form.newpassword.flags.minlength) }}
       </ul>
       <p>{{ _("And meet 3 of the following requirements:") }}</p>
       <ul>

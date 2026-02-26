@@ -33,8 +33,9 @@ $(document).ready(function() {
 
     $('input#newpassword').keyup(function() {
         var pswd = $(this).val();
+        var minlength = Number($(this).attr('minlength')) || 0;
         //validate the length
-        if ( pswd.length < 8 ) {
+        if ( pswd.length < minlength ) {
             $('#newpassword_tooltip #length').removeClass('valid').addClass('invalid');
         } else {
             $('#newpassword_tooltip #length').removeClass('invalid').addClass('valid');

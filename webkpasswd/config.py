@@ -12,3 +12,4 @@ class EnvConfig(object):
     LOGO                  = os.getenv('FLASK_LOGO', NO_LOGO)
     CHPASSWD              = os.getenv('FLASK_CHPASSWD', 'kpasswd')
     SMB_SERVER            = os.getenv('FLASK_SMB_SERVER', '')
+    MIN_PWD_LEN           = int(os.getenv('FLASK_MIN_PWD_LEN', '9'))
