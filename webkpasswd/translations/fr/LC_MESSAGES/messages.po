@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-26 17:25+0100\n"
+"POT-Creation-Date: 2026-08-26 19:11+0200\n"
 "PO-Revision-Date: 2016-12-07 16:21+0100\n"
 "Last-Translator: Romain Labolle <romain.labolle@universite-lyon.fr>\n"
 "Language: fr\n"
@@ -71,11 +71,15 @@ msgstr "Nom d´utilisateur inconnu"
 msgid "Service unavailable"
 msgstr "Service indisponible"
 
-#: kpasswd.py:12 smbpasswd.py:11 smbpasswd.py:12
+#: kpasswd.py:12
+msgid "Unknown domain name"
+msgstr "Nom de domaine inconnu"
+
+#: kpasswd.py:13 smbpasswd.py:11 smbpasswd.py:12
 msgid "The new password was rejected by the server"
 msgstr "Le nouveau mot de passe a été rejeté par le serveur"
 
-#: kpasswd.py:26 smbpasswd.py:30
+#: kpasswd.py:27 smbpasswd.py:30
 #, python-format
 msgid "This password has been seen %(value)d times before in data breaches"
 msgstr "Ce mot de passe a été vu %(value)d fois dans des fuites de données"
@@ -130,3 +134,4 @@ msgstr "Au moins <strong>un symbol</strong>"
 #, python-format
 msgid "Must match <strong>%(newpassword)s</strong>"
 msgstr "Doit correspondre au champ <strong>%(newpassword)s</strong>"
+

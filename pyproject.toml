@@ -1,7 +1,7 @@
 [project]
 name = "webkpasswd"
 description = "Web interface to change ActiveDirectory password with kpasswd or smbpasswd protocols"
-version = "0.5.0"
+version = "0.5.1"
 license = "MIT OR Apache-2.0"
 license-files = ["LICENSE*"]
 readme = "README.md"

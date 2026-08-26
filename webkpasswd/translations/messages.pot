@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-26 17:25+0100\n"
+"POT-Creation-Date: 2026-08-26 19:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,11 +70,15 @@ msgstr ""
 msgid "Service unavailable"
 msgstr ""
 
-#: kpasswd.py:12 smbpasswd.py:11 smbpasswd.py:12
+#: kpasswd.py:12
+msgid "Unknown domain name"
+msgstr ""
+
+#: kpasswd.py:13 smbpasswd.py:11 smbpasswd.py:12
 msgid "The new password was rejected by the server"
 msgstr ""
 
-#: kpasswd.py:26 smbpasswd.py:30
+#: kpasswd.py:27 smbpasswd.py:30
 #, python-format
 msgid "This password has been seen %(value)d times before in data breaches"
 msgstr ""

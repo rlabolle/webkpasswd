@@ -9,6 +9,7 @@ changePasswordErrorMsg = ErrorMsg({
   -1765328360: _("Old password incorrect"),
   -1765328378: _("Unknown username"),
   -1765328228: _("Service unavailable"),
+  -1765328230: _("Unknown domain name"),
             4: _("The new password was rejected by the server"),
 })
 
